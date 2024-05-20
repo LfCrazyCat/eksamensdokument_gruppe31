@@ -6,12 +6,14 @@ import Pokemon from './pages/Pokemon';
 import Type from './pages/Type';
 import SearchResult from './pages/SearchResult';
 import Teams from './pages/Teams';
+import pokeball from './assets/pokeball.png';
 
 const App = () => {
   return (
     <Router>
       <header>
         <nav>
+          <img src={pokeball} alt="Pokeball" className="pokeball-icon" />
           <a href="/">UIN POKEDEX</a>
           <a href="/teams">Teams</a>
           <input type="text" placeholder="Search..." />

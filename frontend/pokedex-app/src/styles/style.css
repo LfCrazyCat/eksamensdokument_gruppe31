@@ -11,23 +11,66 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em;
+  padding: 1em 2em;
   background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
 }
 
 header nav a {
-  margin-right: 4em;
+  margin-right: 2em;
   text-decoration: none;
   color: #333;
+  font-size: 1.2em;
 }
 
 header nav input {
   padding: 0.5em;
   margin-right: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
 }
 
 header nav button {
   background: none;
-  border: 2em;
+  border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
+header nav button img {
+  width: 24px;
+  height: 24px;
+}
+
+.pokeball-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1em;
+}
+
+section h2 {
+  margin-top: 1em;
+}
+
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.pokemon-card {
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+  width: 100px;
+}
+

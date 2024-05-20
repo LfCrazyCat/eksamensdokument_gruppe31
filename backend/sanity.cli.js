@@ -6,6 +6,6 @@ export default defineCliConfig({
     dataset: 'production'
   },
   server: {
-    port: 3334 
+    port: 3335 
   }
 })

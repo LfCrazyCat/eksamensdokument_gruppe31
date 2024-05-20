@@ -24,20 +24,20 @@ const Home = () => {
   return (
     <div>
       <section>
-        <h2>Main Pokemons</h2>
-        <div>
+        <h2>MAIN POKEMON</h2>
+        <div className="section-content">
           {pokemons.map((pokemon) => (
-            <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`}>
-              {pokemon.name}
+            <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`} className="pokemon-card">
+            {pokemon.name}
             </Link>
           ))}
         </div>
       </section>
       <section>
-        <h2>Types</h2>
-        <div>
+        <h2>TYPES</h2>
+        <div className="section-content">
           {types.map((type) => (
-            <Link key={type.name} to={`/${type.name}`}>
+            <Link key={type.name} to={`/${type.name}`} className="pokemon-card">
               {type.name}
             </Link>
           ))}

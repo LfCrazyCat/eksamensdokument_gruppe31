@@ -18,18 +18,18 @@ const Pokemon = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <article>
       <h1>{data.name}</h1>
       <img src={data.sprites.front_default} alt={data.name} />
-      <div>
+      <section>
         <h2>Types</h2>
         <ul>
           {data.types.map((typeInfo) => (
             <li key={typeInfo.type.name}>{typeInfo.type.name}</li>
           ))}
         </ul>
-      </div>
-      <div>
+        </section>
+      <section>
         <h2>Stats</h2>
         <ul>
           {data.stats.map((stat) => (
@@ -38,16 +38,16 @@ const Pokemon = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <div>
+        </section>
+      <section>
         <h2>Abilities</h2>
         <ul>
           {data.abilities.map((abilityInfo) => (
             <li key={abilityInfo.ability.name}>{abilityInfo.ability.name}</li>
           ))}
         </ul>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

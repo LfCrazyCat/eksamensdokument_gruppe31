@@ -13,6 +13,7 @@ import pokeball from './assets/pokeball.png';
 const App = () => {
   return (
     <Router>
+      <div className="container">
       <header>
         <nav>
           <img src={pokeball} alt="Pokeball" className="pokeball-icon" />
@@ -24,6 +25,7 @@ const App = () => {
           </button>
         </nav>
       </header>
+      <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/teams" element={<Teams />} />
@@ -31,6 +33,8 @@ const App = () => {
         <Route path="/searchresults/:pokemon" element={<SearchResult />} />
         <Route path="/pokemons/:pokemon" element={<Pokemon />} />
       </Routes>
+      </main>
+      </div>
     </Router>
   );
 };

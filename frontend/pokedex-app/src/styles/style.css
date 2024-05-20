@@ -44,19 +44,16 @@ header nav button {
   align-items: center;
 }
 
-header nav button img {
+header nav button svg {
   width: 24px;
   height: 24px;
 }
+
 
 .pokeball-icon {
   width: 40px;
   height: 40px;
   margin-right: 1em;
-}
-
-section h2 {
-  margin-top: 1em;
 }
 
 .section-content {
@@ -65,12 +62,18 @@ section h2 {
   gap: 1em;
 }
 
+
 .pokemon-card {
   padding: 1em;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
   text-align: center;
-  width: 100px;
+  width: 120px;
+  transition: transform 0.2s;
 }
 
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

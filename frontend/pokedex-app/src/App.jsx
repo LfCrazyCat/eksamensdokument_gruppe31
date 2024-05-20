@@ -1,6 +1,8 @@
 //pokedex-app/src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Home from './pages/Home';
 import Pokemon from './pages/Pokemon';
 import Type from './pages/Type';
@@ -15,9 +17,11 @@ const App = () => {
         <nav>
           <img src={pokeball} alt="Pokeball" className="pokeball-icon" />
           <a href="/">UIN POKEDEX</a>
-          <a href="/teams">Teams</a>
-          <input type="text" placeholder="Search..." />
-          <button><img src="/assets/search-icon.png" alt="Search" /></button>
+          <a href="/teams">TEAMS</a>
+          <input type="text" placeholder="Søk etter pokemon" />
+          <button>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
         </nav>
       </header>
       <Routes>

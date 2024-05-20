@@ -24,18 +24,18 @@ const SearchResult = () => {
   if (!result) return <div>Loading...</div>;
 
   return (
-    <div>
+    <article>
       <h1>{result.name}</h1>
       <img src={result.sprites.front_default} alt={result.name} />
-      <div>
+      <section>
         <h2>Types</h2>
         <ul>
           {result.types.map((typeInfo) => (
             <li key={typeInfo.type.name}>{typeInfo.type.name}</li>
           ))}
         </ul>
-      </div>
-      <div>
+      </section>
+      <section>
         <h2>Stats</h2>
         <ul>
           {result.stats.map((stat) => (
@@ -44,16 +44,16 @@ const SearchResult = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <div>
+      </section>
+      <section>
         <h2>Abilities</h2>
         <ul>
           {result.abilities.map((abilityInfo) => (
             <li key={abilityInfo.ability.name}>{abilityInfo.ability.name}</li>
           ))}
         </ul>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 

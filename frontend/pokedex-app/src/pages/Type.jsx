@@ -16,7 +16,7 @@ const Type = () => {
   }, [type]);
 
   return (
-    <div>
+    <section>
       <h1>{type} Type</h1>
       <ul>
         {pokemons.map((pokemonInfo) => (
@@ -27,7 +27,7 @@ const Type = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

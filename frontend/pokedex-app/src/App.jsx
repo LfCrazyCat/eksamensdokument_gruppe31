@@ -1,4 +1,4 @@
-//pokedex-app/src/pages/App.jsx
+//pokedex-app/src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';

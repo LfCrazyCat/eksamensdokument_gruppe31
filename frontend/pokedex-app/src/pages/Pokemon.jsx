@@ -81,17 +81,6 @@ const Pokemon = () => {
         <img src={data.sprites.other['official-artwork'].front_default} alt={data.name} />
       </div>
       <div className="pokeDetailBody">
-        <div className="pokeTypes">
-          <h2>TYPE(S)</h2>
-          <ul className="pokeType">
-            {data.types.map((type) => (
-              <li key={type.type.name} className={`type-badge ${type.type.name}`}>
-                <img src={typeIcons[type.type.name.toLowerCase()]} alt={type.type.name} className="type-icon" />
-                {type.type.name}
-              </li>
-            ))}
-          </ul>
-        </div>
         <div className="pokeStats">
           <h2>STATS</h2>
           <ul>
@@ -99,6 +88,17 @@ const Pokemon = () => {
               <li key={index}>
                 <span>{stat.stat.name}</span>
                 <span>{stat.base_stat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="pokeTypes">
+          <h2>TYPE(S)</h2>
+          <ul className="pokeType">
+            {data.types.map((type) => (
+              <li key={type.type.name} className={`type-badge ${type.type.name}`}>
+                <img src={typeIcons[type.type.name.toLowerCase()]} alt={type.type.name} className="type-icon" />
+                {type.type.name}
               </li>
             ))}
           </ul>

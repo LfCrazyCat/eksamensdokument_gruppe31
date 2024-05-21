@@ -1,4 +1,4 @@
-/* pokedex-app/src/styles/style.css */ 
+/* pokedex-app/src/styles/style.css */
 
 body {
   font-family: Arial, sans-serif;
@@ -172,6 +172,7 @@ header nav button svg {
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
+  flex-wrap: wrap;
 }
 
 .pokeTypes, .pokeStats {

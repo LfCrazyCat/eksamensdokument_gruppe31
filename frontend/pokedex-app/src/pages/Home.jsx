@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
 import normal from '../assets/type-symbols/Normal.png';
 import fighting from '../assets/type-symbols/Fighting.png';
 import flying from '../assets/type-symbols/Flying.png';
@@ -51,10 +50,15 @@ const Home = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=9');
-      setPokemons(response.data.results);
+      const promises = response.data.results.map(async (pokemon) => {
+        const pokemonData = await axios.get(pokemon.url);
+        return { ...pokemon, sprite: pokemonData.data.sprites.front_default };
+      });
+      const results = await Promise.all(promises);
+      setPokemons(results);
     };
     fetchPokemons();
-    
+
     const fetchTypes = async () => {
       const response = await axios.get('https://pokeapi.co/api/v2/type');
       setTypes(response.data.results);
@@ -69,7 +73,8 @@ const Home = () => {
         <div className="pokemon-grid">
           {pokemons.map((pokemon) => (
             <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`} className="pokemon-card">
-              {pokemon.name}
+              <img src={pokemon.sprite} alt={pokemon.name} />
+              <p>{pokemon.name}</p>
             </Link>
           ))}
         </div>
@@ -79,7 +84,7 @@ const Home = () => {
         <div className="types-grid">
           {types.map((type) => (
             <Link key={type.name} to={`/${type.name}`} className={`type-card ${type.name}`}>
-              <img src={typeIcons[type.name.toLowerCase()]} alt={type.name} />
+              <img src={typeIcons[type.name.toLowerCase()]} alt={type.name} className="type-icon" />
               {type.name}
             </Link>
           ))}

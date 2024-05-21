@@ -1,8 +1,9 @@
-// frontend/pokedex-app/src/pages/Type.jsx
+// pokedex-app/src/pages/Type.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 
+// Import type symbols
 import normal from '../assets/type-symbols/Normal.png';
 import fighting from '../assets/type-symbols/Fighting.png';
 import flying from '../assets/type-symbols/Flying.png';
@@ -58,7 +59,7 @@ const Type = () => {
   return (
     <section>
       <div className={`type-card ${type}`}>
-        <img src={typeIcons[type.toLowerCase()]} alt={type} />
+        <img src={typeIcons[type.toLowerCase()]} alt={type} className="type-icon" />
         <h1>{type} Type</h1>
       </div>
       <div className="pokemon-grid">

@@ -63,6 +63,7 @@ const PokeDetail = () => {
         <img
           src={data.sprites.other["official-artwork"].front_default}
           alt={data.name}
+          className={data.types[0].type.name} // Apply the type-specific background color
         />
       </div>
       <div className="pokeDetailBody">
@@ -70,7 +71,13 @@ const PokeDetail = () => {
           <h2>TYPE(S)</h2>
           <ul>
             {data.types.map((type) => (
-              <li key={type.slot}>{type.type.name}</li>
+              <li key={type.slot} className={`type-container ${type.type.name}`}>
+                <img
+                  src={`/src/assets/type-symbols/${type.type.name}.png`}
+                  alt={type.type.name}
+                />
+                <span className="type-name">{type.type.name}</span>
+              </li>
             ))}
           </ul>
         </div>

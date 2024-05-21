@@ -143,3 +143,94 @@ header nav button svg {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
+
+.pokeDetailContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pokeDetailHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokeDetailHeader h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+
+.pokeDetailHeader img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.pokeDetailBody {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2em;
+}
+
+.pokeTypes, .pokeStats {
+  width: 45%;
+}
+
+.pokeTypes h2, .pokeStats h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.pokeTypes ul, .pokeStats ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pokeTypes li, .pokeStats li {
+  margin-bottom: 0.5em;
+}
+
+.pokeStats li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokeAbilities {
+  margin-top: 2em;
+  text-align: left;
+}
+
+
+
+.pokeAbilities .ability {
+  margin-bottom: 1.5em;
+}
+
+.pokeAbilities .ability strong {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.pokeTypeContainer {
+  margin-top: 2em;
+}
+
+.pokeType, .pokeStats, .pokeAbility {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.pokeType li, .pokeStats li, .pokeAbility li {
+  padding: 0.5em 0;
+}
+
+.pokeAbility p {
+  margin: 0.5em 0;
+}

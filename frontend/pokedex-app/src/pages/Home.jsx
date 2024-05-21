@@ -26,11 +26,9 @@ const Home = () => {
       <section>
         <h2 className="section-title">MAIN POKEMONS</h2>
         <div className="pokemon-grid">
-          {pokemons.map((pokemon, index) => (
+          {pokemons.map((pokemon) => (
             <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`} className="pokemon-card">
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt={pokemon.name} />
-              <div>{pokemon.name}</div>
-              <div>#{String(index + 1).padStart(3, '0')}</div>
+              {pokemon.name}
             </Link>
           ))}
         </div>
@@ -39,7 +37,7 @@ const Home = () => {
         <h2 className="section-title">TYPES</h2>
         <div className="types-grid">
           {types.map((type) => (
-            <Link key={type.name} to={`/${type.name}`} className="type-card">
+            <Link key={type.name} to={`/${type.name}`} className={`type-card ${type.name}`}>
               {type.name}
             </Link>
           ))}

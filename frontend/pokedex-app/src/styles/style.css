@@ -60,7 +60,6 @@ header nav button svg {
   height: 24px;
 }
 
-
 .pokeball-icon {
   width: 40px;
   height: 40px;
@@ -94,7 +93,6 @@ header nav button svg {
   gap: 1em;
 }
 
-
 .pokemon-card {
   padding: 1em;
   border: 1px solid #ddd;
@@ -103,12 +101,7 @@ header nav button svg {
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
-  color: #333
-}
-
-.pokemon-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
 }
 
 .pokemon-card:hover {
@@ -141,7 +134,6 @@ header nav button svg {
 .type-card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
 }
 
 .pokeDetailContainer {
@@ -165,7 +157,6 @@ header nav button svg {
   margin-bottom: 0.5em;
 }
 
-
 .pokeDetailHeader img {
   width: 300px;
   height: 300px;
@@ -174,18 +165,20 @@ header nav button svg {
 
 .pokeDetailBody {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 2em;
 }
 
 .pokeTypes, .pokeStats {
   width: 45%;
+  text-align: left;
 }
 
 .pokeTypes h2, .pokeStats h2 {
   font-size: 1.5em;
   margin-bottom: 1em;
 }
+
 .pokeTypes ul, .pokeStats ul {
   list-style-type: none;
   padding: 0;
@@ -205,7 +198,10 @@ header nav button svg {
   text-align: left;
 }
 
-
+.pokeAbilities h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
 
 .pokeAbilities .ability {
   margin-bottom: 1.5em;
@@ -233,4 +229,63 @@ header nav button svg {
 
 .pokeAbility p {
   margin: 0.5em 0;
+}
+
+/* Farger for pokemon-typer */
+.normal {
+  background-color: #dce1e6;
+}
+.fighting {
+  background-color: #f0c3d0;
+}
+.flying {
+  background-color: #dce4f4;
+}
+.poison {
+  background-color: #e6caf2;
+}
+.ground {
+  background-color: #f2c8b4;
+}
+.rock {
+  background-color: #f7eed4;
+}
+.bug {
+  background-color: #eaf4d3;
+}
+.ghost {
+  background-color: #d0d9f4;
+}
+.steel {
+  background-color: #d4edf7;
+}
+.fire {
+  background-color: #f4d5bf;
+}
+.water {
+  background-color: #cbe1f9;
+}
+.grass {
+  background-color: #cdf9c8;
+}
+.electric {
+  background-color: #f4eab8;
+}
+.psychic {
+  background-color: #f2c2c4;
+}
+.ice {
+  background-color: #d6f9f3;
+}
+.dragon {
+  background-color: #c6dff4;
+}
+.dark {
+  background-color: #d3cae3;
+}
+.fairy {
+  background-color: #f9dbf6;
+}
+.unknown, .shadow {
+  visibility: hidden;
 }

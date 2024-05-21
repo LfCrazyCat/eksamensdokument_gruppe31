@@ -1,7 +1,7 @@
 // pokedex-app/src/pages/PokeDetail.jsx
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../styles/style.css"; 
+import "../styles/style.css";
 
 const PokeDetail = () => {
   const { pokemon } = useParams();
@@ -58,42 +58,46 @@ const PokeDetail = () => {
 
   return (
     <section className="pokeDetailContainer">
-      <h2>{data.name}</h2>
-      <img
-        src={data.sprites.other["official-artwork"].front_default}
-        alt={data.name}
-      />
-      <section className="pokeTypeContainer">
-        <h2>TYPE(S)</h2>
-        <ul className="pokeType">
-          {data.types.map((type) => (
-            <li key={type.slot}>{type.type.name}</li>
-          ))}
-        </ul>
-        <h2>STATS</h2>
-        <ul className="pokeStats">
-          {data.stats.map((stat, index) => (
-            <li key={index}>
-              <span>{stat.stat.name}</span>
-              <span>{stat.base_stat}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <ul className="pokeAbility">
-        <h3>ABILITIES</h3>
+      <div className="pokeDetailHeader">
+        <h1>{data.name}</h1>
+        <img
+          src={data.sprites.other["official-artwork"].front_default}
+          alt={data.name}
+        />
+      </div>
+      <div className="pokeDetailBody">
+        <div className="pokeTypes">
+          <h2>TYPE(S)</h2>
+          <ul>
+            {data.types.map((type) => (
+              <li key={type.slot}>{type.type.name}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="pokeStats">
+          <h2>STATS</h2>
+          <ul>
+            {data.stats.map((stat, index) => (
+              <li key={index}>
+                <span>{stat.stat.name}</span>
+                <span>{stat.base_stat}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="pokeAbilities">
+        <h2>ABILITIES</h2>
         {abilities.map((ability, index) => (
-          <li key={index}>
+          <div key={index} className="ability">
             <strong>{ability.name}</strong>
             <p>Effect: {ability.effect}</p>
             <p>Short Effect: {ability.shortEffect}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };
 
 export default PokeDetail;
-
-

@@ -172,13 +172,40 @@ header nav button svg {
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
-  flex-wrap: wrap;
 }
-
-.pokeTypes, .pokeStats {
-  width: 45%;
+.pokeTypes {
+  width: 30%;
   text-align: left;
 }
+
+
+.pokeStats {
+  width: 30%;
+  text-align: left;
+}
+
+.pokeDetailHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokeDetailHeader h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.pokeDetailHeader img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  background-color: #dce4f4;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+
 
 .pokeTypes h2, .pokeStats h2 {
   font-size: 1.5em;
@@ -223,11 +250,7 @@ header nav button svg {
   margin-top: 2em;
 }
 
-.pokeType, .pokeStats, .pokeAbility {
-  list-style-type: none;
-  padding: 0;
-  margin: 1em 0;
-}
+
 
 .pokeType li, .pokeStats li, .pokeAbility li {
   padding: 0.5em 0;
@@ -356,8 +379,8 @@ header nav button svg {
   }
 
   .type-icon {
-    width: 30px;
-    height: 30px;
+    width: 5px;
+    height: 5px;
   }
 }
 

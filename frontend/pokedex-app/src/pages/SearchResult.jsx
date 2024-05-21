@@ -1,7 +1,7 @@
-//pokedex-app/src/pages/SearchResult.jsx
+// SearchResult.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const SearchResult = () => {
   const { pokemon } = useParams();
@@ -13,6 +13,7 @@ const SearchResult = () => {
       try {
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         setResult(response.data);
+        setNotFound(false);
       } catch (error) {
         setNotFound(true);
       }

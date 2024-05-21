@@ -1,5 +1,4 @@
-/* pokedex-app/src/styles/style.css */
-
+/* Generelle stiler for hele siden */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,6 +9,7 @@ body {
   justify-content: center;
 }
 
+/* Container for hovedinnholdet */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -18,6 +18,7 @@ body {
   flex-direction: column;
 }
 
+/* Header-stiler */
 header {
   display: flex;
   justify-content: space-between;
@@ -27,11 +28,13 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
+/* Navigasjonsstiler */
 header nav {
   display: flex;
   align-items: center;
 }
 
+/* Link-stiler i navigasjonen */
 header nav a {
   margin-right: 2em;
   text-decoration: none;
@@ -39,6 +42,7 @@ header nav a {
   font-size: 1.2em;
 }
 
+/* Input-felt stiler */
 header nav input {
   padding: 0.5em;
   margin-right: 0.5em;
@@ -48,6 +52,7 @@ header nav input {
   width: 500px;
 }
 
+/* Søke-knapp stiler */
 header nav button {
   background: none;
   border: none;
@@ -61,12 +66,14 @@ header nav button svg {
   height: 24px;
 }
 
+/* Stil for Pokeball-ikonet */
 .pokeball-icon {
   width: 40px;
   height: 40px;
   margin-right: 1em;
 }
 
+/* Hjem-container stiler */
 .home-container {
   padding: 2em;
   background-color: #fff;
@@ -76,12 +83,14 @@ header nav button svg {
   margin-top: 2em;
 }
 
+/* Seksjon-titler */
 .section-title {
   font-size: 2em;
   margin-bottom: 1em;
   text-align: left;
 }
 
+/* Grid for å vise Pokemon */
 .pokemon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -94,6 +103,7 @@ header nav button svg {
   gap: 1em;
 }
 
+/* Kort for hver Pokemon */
 .pokemon-card {
   padding: 1em;
   border: 1px solid #ddd;
@@ -115,12 +125,14 @@ header nav button svg {
   height: 100px;
 }
 
+/* Grid for å vise typer */
 .types-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1.5em;
 }
 
+/* Kort for hver type */
 .type-card {
   padding: 1em;
   border: 1px solid #ddd;
@@ -137,6 +149,7 @@ header nav button svg {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Detalj-container for Pokemon */
 .pokeDetailContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -147,6 +160,7 @@ header nav button svg {
   text-align: center;
 }
 
+/* Detalj-header for Pokemon */
 .pokeDetailHeader {
   display: flex;
   flex-direction: column;
@@ -168,45 +182,24 @@ header nav button svg {
   padding: 1em;
 }
 
+/* Kropp for Pokemon-detaljer */
 .pokeDetailBody {
   display: flex;
   justify-content: space-between;
-  margin-top: 2em;
-}
-.pokeTypes {
-  width: 30%;
-  text-align: left;
+  margin-top: 1em;
 }
 
+.pokeTypes {
+  width: 5%;
+  height: 5%;
+}
 
 .pokeStats {
   width: 30%;
   text-align: left;
 }
 
-.pokeDetailHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pokeDetailHeader h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
-}
-
-.pokeDetailHeader img {
-  width: 300px;
-  height: 300px;
-  object-fit: contain;
-  background-color: #dce4f4;
-  border-radius: 8px;
-  padding: 1em;
-}
-
-
-
+/* Justering for type og stats */
 .pokeTypes h2, .pokeStats h2 {
   font-size: 1.5em;
   margin-bottom: 1em;
@@ -226,6 +219,7 @@ header nav button svg {
   justify-content: space-between;
 }
 
+/* Abilities stiler */
 .pokeAbilities {
   margin-top: 2em;
   text-align: left;
@@ -250,8 +244,6 @@ header nav button svg {
   margin-top: 2em;
 }
 
-
-
 .pokeType li, .pokeStats li, .pokeAbility li {
   padding: 0.5em 0;
 }
@@ -260,7 +252,7 @@ header nav button svg {
   margin: 0.5em 0;
 }
 
-/* Farger for pokemon-typer */
+/* Farger for Pokemon-typer */
 .normal {
   background-color: #dce1e6;
   color: #000;
@@ -399,7 +391,7 @@ header nav button svg {
   }
 
   .pokeAbilities h2, .pokeTypes h2, .pokeStats h2 {
-    font-size: 1.2em;
+    font-size: 1.0em;
   }
 
   .type-badge {

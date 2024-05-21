@@ -9,6 +9,7 @@ import Type from './pages/Type';
 import SearchResult from './pages/SearchResult';
 import Teams from './pages/Teams';
 import pokeball from './assets/pokeball.png';
+import './styles/style.css';
 
 const App = () => {
   return (

@@ -1,7 +1,7 @@
 //pokedex-app/src/pages/Pokemon.jsx
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import "../styles/styles.scss"
+import "../styles/styles.css"
 
 const PokeDetail = () => {
   const { name } = useParams()

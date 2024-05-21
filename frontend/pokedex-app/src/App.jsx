@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Home from './pages/Home';
-import Pokemon from './pages/Pokemon';
+import PokeDetail from './pages/PokeDetail';
 import Type from './pages/Type';
 import SearchResult from './pages/SearchResult';
 import Teams from './pages/Teams';
@@ -31,7 +31,7 @@ const App = () => {
             <Route path="/teams" element={<Teams />} />
             <Route path="/:type" element={<Type />} />
             <Route path="/searchresults/:pokemon" element={<SearchResult />} />
-            <Route path="/pokemons/:pokemon" element={<Pokemon />} />
+            <Route path="/pokemons/:pokemon" element={<PokeDetail />} />
           </Routes>
         </main>
       </div>

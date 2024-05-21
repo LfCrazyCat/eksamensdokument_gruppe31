@@ -1,7 +1,8 @@
-//frontend/pokedex-app/src/pages/Home.jsx
+// pokedex-app/src/pages/Home.jsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../styles/style.css';
 
 const Home = () => {
   const [pokemons, setPokemons] = useState([]);

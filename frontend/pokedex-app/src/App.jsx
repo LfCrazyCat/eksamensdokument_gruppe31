@@ -14,26 +14,26 @@ const App = () => {
   return (
     <Router>
       <div className="container">
-      <header>
-        <nav>
-          <img src={pokeball} alt="Pokeball" className="pokeball-icon" />
-          <a href="/">UIN POKEDEX</a>
-          <a href="/teams">TEAMS</a>
-          <input type="text" placeholder="Søk etter pokemon" />
-          <button>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </button>
-        </nav>
-      </header>
-      <main>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/teams" element={<Teams />} />
-        <Route path="/:type" element={<Type />} />
-        <Route path="/searchresults/:pokemon" element={<SearchResult />} />
-        <Route path="/pokemons/:pokemon" element={<Pokemon />} />
-      </Routes>
-      </main>
+        <header>
+          <nav>
+            <img src={pokeball} alt="Pokeball" className="pokeball-icon" />
+            <a href="/">UIN POKEDEX</a>
+            <a href="/teams">TEAMS</a>
+            <input type="text" placeholder="Søk etter pokemon" />
+            <button>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
+          </nav>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/teams" element={<Teams />} />
+            <Route path="/:type" element={<Type />} />
+            <Route path="/searchresults/:pokemon" element={<SearchResult />} />
+            <Route path="/pokemons/:pokemon" element={<Pokemon />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

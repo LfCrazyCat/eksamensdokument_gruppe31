@@ -1,54 +1,101 @@
 //pokedex-app/src/pages/Pokemon.jsx
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import "../styles/styles.scss"
 
-const Pokemon = () => {
-  const { pokemon } = useParams();
-  const [data, setData] = useState(null);
+const PokeDetail = () => {
+  const { name } = useParams()
+  const [pokemon, setPokemon] = useState(null)
+  const [abilities, setAbilities] = useState([])
 
   useEffect(() => {
-    const fetchPokemon = async () => {
-      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-      setData(response.data);
-    };
-    fetchPokemon();
-  }, [pokemon]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${name}`
+        )
+        if (response.ok) {
+          const data = await response.json()
+          setPokemon(data)
 
-  if (!data) return <div>Loading...</div>;
+          const abilitiesData = await Promise.all(
+            data.abilities.map(async (ability) => {
+              const abilityResponse = await fetch(ability.ability.url)
+              if (abilityResponse.ok) {
+                const abilityData = await abilityResponse.json()
+                return {
+                  name: ability.ability.name,
+                  effect: abilityData.effect_entries.find(
+                    (entry) => entry.language.name === "en"
+                  ).effect,
+                  shortEffect: abilityData.effect_entries.find(
+                    (entry) => entry.language.name === "en"
+                  ).short_effect,
+                }
+              } else {
+                console.error(`Failed to fetch ability data`)
+                return {
+                  name: ability.ability.name,
+                  effect: "No effect information available",
+                  shortEffect: "No short effect information available",
+                }
+              }
+            })
+          )
+          setAbilities(abilitiesData)
+        } else {
+          console.error("Failed to fetch data")
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error)
+      }
+    }
 
+    fetchData()
+  }, [name])
+
+ 
+  if (!pokemon) {
+    return <p>Loading...</p>
+  }
+
+  
   return (
-    <article>
-      <h1>{data.name}</h1>
-      <img src={data.sprites.front_default} alt={data.name} />
-      <section>
-        <h2>Types</h2>
-        <ul>
-          {data.types.map((typeInfo) => (
-            <li key={typeInfo.type.name}>{typeInfo.type.name}</li>
+    <section className="pokeDetailContainer">
+      <h2>{pokemon.name}</h2>
+      <img
+        src={pokemon.sprites.other["official-artwork"].front_default}
+        alt={pokemon.name}
+      />
+      <section className="pokeTypeContainer">
+        <h2>TYPE(S)</h2>
+        <ul className="pokeType">
+          {pokemon.types.map((type) => (
+            <li key={type.slot}>{type.type.name}</li>
           ))}
         </ul>
-        </section>
-      <section>
-        <h2>Stats</h2>
-        <ul>
-          {data.stats.map((stat) => (
-            <li key={stat.stat.name}>
-              {stat.stat.name}: {stat.base_stat}
+        <h2>STATS</h2>
+        <ul className="pokeStats">
+          {pokemon.stats.map((stat, index) => (
+            <li key={index}>
+              <span>{stat.stat.name}</span>
+              <span>{stat.base_stat}</span>
             </li>
           ))}
         </ul>
-        </section>
-      <section>
-        <h2>Abilities</h2>
-        <ul>
-          {data.abilities.map((abilityInfo) => (
-            <li key={abilityInfo.ability.name}>{abilityInfo.ability.name}</li>
-          ))}
-        </ul>
       </section>
-    </article>
-  );
-};
+      <ul className="pokeAbility">
+        <h3>ABILITIES</h3>
+        {abilities.map((ability, index) => (
+          <li key={index}>
+            <strong>{ability.name}</strong>
+            <p>Effect:{ability.effect}</p>
+            <p>Short Effect:{ability.shortEffect}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
 
-export default Pokemon;
+export default PokeDetail

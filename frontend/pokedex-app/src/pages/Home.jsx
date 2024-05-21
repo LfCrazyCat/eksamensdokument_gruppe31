@@ -22,22 +22,24 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-container">
       <section>
-        <h2>MAIN POKEMON</h2>
-        <div className="section-content">
-          {pokemons.map((pokemon) => (
+        <h2 className="section-title">MAIN POKEMONS</h2>
+        <div className="pokemon-grid">
+          {pokemons.map((pokemon, index) => (
             <Link key={pokemon.name} to={`/pokemons/${pokemon.name}`} className="pokemon-card">
-            {pokemon.name}
+              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt={pokemon.name} />
+              <div>{pokemon.name}</div>
+              <div>#{String(index + 1).padStart(3, '0')}</div>
             </Link>
           ))}
         </div>
       </section>
       <section>
-        <h2>TYPES</h2>
-        <div className="section-content">
+        <h2 className="section-title">TYPES</h2>
+        <div className="types-grid">
           {types.map((type) => (
-            <Link key={type.name} to={`/${type.name}`} className="pokemon-card">
+            <Link key={type.name} to={`/${type.name}`} className="type-card">
               {type.name}
             </Link>
           ))}

@@ -3,9 +3,9 @@ import React from 'react';
 
 const Teams = () => {
   return (
-    <div>
+    <section>
       <h1>Teams</h1>
-    </div>
+    </section>
   );
 };
 
